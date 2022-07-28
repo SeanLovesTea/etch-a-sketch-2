@@ -1,0 +1,33 @@
+.container{
+    display:flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* border: black solid 1px; */
+    
+}
+.grid{
+    display:flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    border:black solid 1px;
+}
+.gridColumn{
+    display: flex;
+    border: lightBlue solid 1px;
+    flex:1;
+    
+}
+.gridColumn :hover{
+    background-color: yellow;
+
+}
+.gridRow{
+    display: flex;
+    border: lightcoral solid 1px;
+    flex:1;
+}
+.gridRow :hover{
+    background-color: yellow;
+
+}
