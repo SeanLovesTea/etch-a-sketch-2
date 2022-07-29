@@ -1,30 +1,63 @@
 const grid = document.querySelector('.grid');
 const gridBtn = document.querySelector('.gridBtn');
-const gridColumn = document.querySelector('.gridColumn');
-const gridRow = document.querySelector('.gridRow');
+const clearBtn = document.querySelector('.clear-squares');
 
-gridBtn.addEventListener('click', getGridMultiplier);
+clearBtn.addEventListener('click', removeDivs);
+gridBtn.addEventListener('click', makeGrid);
 
-function getGridMultiplier(){
-    let gridMultiplier = prompt('Chose your grid size!')
-    if(gridMultiplier >100){
-        let gridMultiplier = prompt('Chose a grid size less than 100!')
+function getGridMultiplier(gridMultiplier){
+    if(gridMultiplier > 100 || gridMultiplier < 2){
+        let gridMultiplier = prompt('Chose a grid size between 3-100')
         return makeGrid(gridMultiplier)
 } return makeGrid(gridMultiplier)
 };
 
 function makeGrid(gridMultiplier){
+    removeDivs();
+    console.log(grid.hasChildNodes())
     for(let i= 0;i < gridMultiplier; i++){
-        const gridColumn = document.createElement('div');
-        gridColumn.className = 'gridColumn'
+        let gridColumn = document.createElement('div');
+        gridColumn.style.display = 'flex';
+        gridColumn.style.flex = '1';
+        gridColumn.style.backgroundColor = 'white';
+        gridColumn.style.border = '1px solid red';
+        gridColumn.addEventListener('mouseover', colorSquare);
         grid.appendChild(gridColumn);
-        for(let i= 0;i < gridMultiplier; i++){
-            const gridRow = document.createElement('div');
-            gridRow.className = 'gridRow'
-            gridColumn.appendChild(gridRow);
+
+    for(let i= 0;i < gridMultiplier; i++){
+        const gridRow = document.createElement('div');
+        gridRow.style.display = 'flex';
+        gridRow.style.flex = '1';
+        gridRow.style.backgroundColor = 'white';
+        gridRow.style.border = '1px solid blue';
+        gridRow.addEventListener('mouseover', colorSquare);
+        gridColumn.appendChild(gridRow);
         }
     }
+    const input = document.querySelector('input');
+    input.value = ''
+    return   
 };
+
+function removeDivs(){
+    let gridCells =grid.querySelectorAll('div')
+    gridCells.forEach((div) => div.remove());
+    return;
+}
+
+function colorSquare(){
+    this.style.backgroundColor ='black';
+}
+
+
+// function resetColor(gridColumn,gridRow){
+//     gridColumn.forEach((gridColumn), ()=> {
+//         gridColumn.backgroundColor = 'white'
+//     })
+//     gridRow.forEach((gridRow), ()=> {
+//         gridRow.backgroundColor = 'white'
+//     })
+// }
 
 // function randomInteger(max) {
 //     return Math.floor(Math.random()*(max + 1));
@@ -36,21 +69,3 @@ function makeGrid(gridMultiplier){
 //     let b = randomInteger(255);
 //     return `rgb(${r},${g},${b})`
 // }
-// gridColumn.forEach((gridColumn) => {
-//     gridColumn.addEventListener('mouseover', (e) => {
-//         gridColumn.style.backgroundcolor ='black'
-        // document.getElementById("myH1").style.color = "red";
-//     });
-// });
-
-// btn.forEach((btn) => {
-//     btn.addEventListener("click", () =>{
-//         if(playerScore == 5 || compScore == 5){
-//             return
-//         }
-//         audioPlay()
-//         let playerSelection = btn.id
-//         let computerSelection = getComputerChoice();
-//         playRound(playerSelection,computerSelection)
-//     })  
-// });
