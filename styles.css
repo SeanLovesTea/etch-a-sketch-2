@@ -10,24 +10,15 @@
     flex-direction: column;
     width: 600px;
     height: 600px;
-    border:black solid 1px;
+    border:rgb(66, 64, 64) solid 1px;
 }
-.gridColumn{
+/* .gridColumn{
     display: flex;
-    border: lightBlue solid 1px;
-    flex:1;
-    
-}
-.gridColumn :focus{
-    background-color: yellow;
-
+    border: lightgray solid .5px;
+    flex:1; 
 }
 .gridRow{
     display: flex;
-    border: lightcoral solid 1px;
+    border: lightcyan solid .5px;
     flex:1;
-}
-.gridRow :focus{
-    background-color: yellow;
-
-}
+} */

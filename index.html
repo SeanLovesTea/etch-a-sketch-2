@@ -18,7 +18,8 @@
     <button class="gridBtn">Start Game</button>
     <input type="text" placeholder="Size of board"  onchange="getGridMultiplier(this.value)"/>
     <button class="clear-squares">Clear Squares</button>
-    <button class="shades">Switch to shading mode</button>
-    <button class="rainbow">Switch to Rainbow mode</button>
+    <button onclick="changeColor('grey')" class="shades">Grey Color</button>
+    <button onclick="changeColor('white')" class="shades">Erasor</button>
+    <button onclick="changeColor('random')" class="random">Switch to Rainbow mode</button>
 </body>
 </html>
