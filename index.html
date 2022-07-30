@@ -12,16 +12,23 @@
     <h1>Etch-A-Sketch</h1>
 
     <div class="container">
+        
+        <div class="start-game">
+            <button class="gridBtn">Start Game</button>
+            <input type="text" placeholder="Size of board"  onchange="getGridMultiplier(this.value)"/>
+        </div>
         <div class="grid"></div>
     </div>
 
-    <button class="gridBtn">Start Game</button>
-    <input type="text" placeholder="Size of board"  onchange="getGridMultiplier(this.value)"/>
-    <button class="clear-squares">Clear Squares</button>
-    <button onclick="changeColor('grey')" >Grey Color</button>
-    <button onclick="changeColor('Black')" >Black Color</button>
-    <button onclick="changeColor('white')" >Erasor</button>
-    <button onclick="changeColor('random')" >Switch to Rainbow mode</button>
-    <button onclick="changeColor('shade')" >Shade</button>
+    
+    <div class="btn-container">
+        <button class="clear-squares">Clear Squares</button>
+        <button onclick="changeColor('grey')" >Grey Color</button>
+        <button onclick="changeColor('Black')" >Black Color</button>
+        <button onclick="changeColor('white')" >Erasor</button>
+        <button onclick="changeColor('random')" >Switch to Rainbow mode</button>
+        <button onclick="changeColor('shade')" >Shade</button>
+    </div>
+    
 </body>
 </html>

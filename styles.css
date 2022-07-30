@@ -1,16 +1,43 @@
+body{
+    background-color: whitesmoke;
+}
+h1{
+    text-align: center;
+}
 .container{
     display:flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     /* flex-direction: column; */
-    /* border: black solid 1px; */
-    
+    /* border: black solid 1px; */ 
+}
+.start-game{
+    /* background-color: antiquewhite; */
+    /* padding: 24px; */
 }
 .grid{
     display:flex;
     flex-direction: column;
     width: 600px;
     height: 600px;
-    border:rgb(66, 64, 64) solid 1px;
+    border:rgba(148, 7, 7, 0.829) solid 4px;
+    background-color: white;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+    /* padding: 24px; */
+}
+button{
+    margin:16px;
+    border-radius: 4px;
+}
+.gridBtn{
+    color: green;
+}
+.clear-squares{
+    /* border: solid 2px; */
 }
 /* .gridColumn{
     display: flex;
