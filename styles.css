@@ -36,16 +36,3 @@ button{
 .gridBtn{
     color: green;
 }
-.clear-squares{
-    /* border: solid 2px; */
-}
-/* .gridColumn{
-    display: flex;
-    border: lightgray solid .5px;
-    flex:1; 
-}
-.gridRow{
-    display: flex;
-    border: lightcyan solid .5px;
-    flex:1;
-} */
