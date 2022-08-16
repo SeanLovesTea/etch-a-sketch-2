@@ -24,7 +24,7 @@ function makeGrid(gridMultiplier){
         gridColumn.style.border = '.2px solid lightcyan';
         gridColumn.style.borderTop = '0px';
         gridColumn.style.borderBottom = '0px';
-        gridColumn.className ="gridCell"
+        gridColumn.className ="gridCellRow"
         gridColumn.addEventListener('mouseover', colorSquare);
         grid.appendChild(gridColumn);
 
@@ -57,32 +57,16 @@ function removeDivs(){
 function colorSquare(e){
     if (color === "random") {
         this.style.backgroundColor =`hsl(${Math.random() * 360}, 100%, 50%)`;
-        console.log(this)
     }
-    else if (color === 'shade'){
-        const currentOpacity = this.style.opacity
-        console.log(currentOpacity)
-        this.style.backgroundColor = 'black'
-        if(currentOpacity){
-            this.style.opacity = Number(currentOpacity) +.1;
-        }else
-        this.style.opacity = .1;
-    };
-    this.style.backgroundColor = color
+    if (color === 'shade'){
+        getShade();
+    }
+
+    this.style.backgroundColor = color;
+    console.log("COLOR : " + color)
 };
       
 function changeColor(choice){
     color = choice;
-    console.log(color)
+    console.log(color);
 }
-// function shade(){
-//     let gridCells = grid.querySelectorAll('div')
-//     const currentOpacity = gridCells.style.opacity;
-//     gridCells.forEach((div) => div.style.backgroundColor = 'white');
-//     console.log(gridCells.opacity)
-//     gridCells.style.backgroundColor = 'black'
-//         if(currentOpacity){
-//             gridCells.style.opacity = Number(currentOpacity) +.1;
-//         }else
-//         gridCells.style.opacity = .1;
-// }
